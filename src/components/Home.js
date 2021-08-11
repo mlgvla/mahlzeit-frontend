@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
-class RecipeSearchContainer extends Component {
+
+class Home extends Component {
     render() {
         return (
             <div>
-                Search Container goes here!
+              Welcome to Mahlzeit!
             </div>
         );
     }
 }
 
-export default RecipeSearchContainer;
+export default Home;
+
+
