@@ -4,7 +4,7 @@ class RecipeSearchContainer extends Component {
     render() {
         return (
             <div>
-                Search Container goes here!
+                <h1>Search Container goes here!</h1>
             </div>
         );
     }
