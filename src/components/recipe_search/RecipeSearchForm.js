@@ -15,8 +15,7 @@ class RecipeSearchForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         let query = this.state.searchString.split(', ').join('%20') //parsed string for fetch request
-        //send to action creator here fetchRecipes(query)
-        console.log(query)
+        this.props.fetchRecipes(query)
        
         this.setState({
             searchString: ''
@@ -30,7 +29,7 @@ class RecipeSearchForm extends Component {
                         size="40" 
                         name="searchString" 
                         value={this.state.searchString} 
-                        placeholder="ingredients"
+                        placeholder="ingredients or recipe name"
                         onChange={this.handleChange}
                     />
                     <input type="submit" value="Find Recipes" />
