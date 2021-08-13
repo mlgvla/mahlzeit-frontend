@@ -7,6 +7,7 @@ import RecipeCard from './RecipeCard';
 class RecipeSearchHits extends Component {
 
     render() {
+        console.log(this.props.recipeHits)
         return (
             <div>
                 {this.props.recipeHits.map(recipe => <RecipeCard key={recipe.recipeId} recipeHit={recipe}/>)}
