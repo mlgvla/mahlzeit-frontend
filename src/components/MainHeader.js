@@ -9,6 +9,8 @@ const MainHeader = () => {
             <Link to="/">Home</Link> 
                 &nbsp;&nbsp;&nbsp;
             <Link to="/search">Find Recipes</Link>
+                &nbsp;&nbsp;&nbsp;
+            <Link to='/myrecipes'>MyRecipes</Link>
         </nav>
         <br />
         <hr />
