@@ -1,4 +1,5 @@
 //import React from 'react';
+import uuid from 'uuid';
 
 const recipeReducer = (state = {
     recipeHits: [],
@@ -15,10 +16,11 @@ const recipeReducer = (state = {
             }
 
         case "ADD_RECIPE_HITS":
-    
+            
+            const hitsWithRecipeId = action.recipeHits.map(recipeHit => ({...recipeHit, recipeId: uuid()}))
             return {
                 ...state,
-                recipeHits: action.recipeHits,
+                recipeHits: hitsWithRecipeId,
                 loading: false
             }
     
