@@ -1,20 +1,18 @@
 import './App.css';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import Home from './components/Home';
 import RecipeSearchContainer from './containers/RecipeSearchContainer';
 import MyRecipesContainer from './containers/MyRecipesContainer';
 import MainHeader from './components/MainHeader';
 import RecipeDetail from './components/RecipeDetail';
 import { Component } from 'react';
+// import { getMyRecipes } from './actions/recipeActions'
+
 
 
 class App extends Component {
    
-    componentDidMount() {
-        console.log(this.props)
-        //this.props.getMyRecipes()
-    }
 
     render() {
         return (
@@ -34,12 +32,16 @@ class App extends Component {
  
 }
 
-const mapStateToProps = state => {
-    return {}
-}
+// const mapStateToProps = state => {
+//     return {}
+// }
 
-const mapDispatchToProps = dispath => {
-    return {}
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         getMyRecipes: () => dispatch(getMyRecipes()),
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

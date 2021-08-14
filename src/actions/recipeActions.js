@@ -12,3 +12,17 @@ export const fetchRecipes = (query) => {
     }
 }
 
+export const getMyRecipes = () => {
+    console.log("in getMyRecipes")
+
+    return (dispatch) => {
+        dispatch( { type: "LOADING_MY_RECIPES" } )
+        fetch("http://localhost:3001/recipes")
+        .then(res => res.json())
+        .then(myRecipes => {
+            dispatch( { type: "LOAD_MY_RECIPES", myRecipes: myRecipes.data } )
+        })
+    }
+    
+}
+

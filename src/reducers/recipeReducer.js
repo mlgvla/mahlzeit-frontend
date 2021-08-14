@@ -3,6 +3,7 @@ import uuid from 'uuid';
 
 const recipeReducer = (state = {
     recipeHits: [],
+    myRecipes: [],
     loading: false
     }, 
     action) => {
@@ -22,6 +23,26 @@ const recipeReducer = (state = {
                 ...state,
                 recipeHits: hitsWithRecipeId,
                 loading: false
+            }
+
+        case "LOADING_MY_RECIPES":
+            // console.log("In LOADING_MY_RECIPES")
+            return {
+                ...state,
+                myRecipes: [...state.myRecipes],
+                loading: true
+            }
+
+        case "LOAD_MY_RECIPES":
+            // console.log("in load my recipes")
+            // console.log(action.myRecipes)
+            //map through myRecipes
+            let parsedRecipes = action.myRecipes.map(recipe => { 
+                return {...recipe, ingredientLines: JSON.parse(recipe.attributes.ingredientLines) }}
+            )
+            return {
+                ...state,
+                myRecipes:[parsedRecipes]
             }
     
         default:

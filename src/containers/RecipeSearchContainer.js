@@ -7,13 +7,12 @@ import { fetchRecipes } from '../actions/recipeActions';
 class RecipeSearchContainer extends Component {
     
     render() {
-        
+        console.log(this.props)
         return (
             <div>
                 <RecipeSearchForm fetchRecipes={this.props.fetchRecipes} />
                 <br /><br /><br />
                 <RecipeSearchHits recipeHits={this.props.recipeHits}/>
-
             </div>
         );
     }
