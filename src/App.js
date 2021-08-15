@@ -5,7 +5,7 @@ import Home from './components/Home';
 import RecipeSearchContainer from './containers/RecipeSearchContainer';
 import MyRecipesContainer from './containers/MyRecipesContainer';
 import MainHeader from './components/MainHeader';
-import RecipeDetail from './components/RecipeDetail';
+import RecipeDetail from './components/recipe_search/RecipeDetail';
 import { Component } from 'react';
 // import { getMyRecipes } from './actions/recipeActions'
 
