@@ -26,3 +26,21 @@ export const getMyRecipes = () => {
     
 }
 
+export const saveToMyRecipes = (recipe) => {
+    console.log(recipe)
+    const configObj =  {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(recipe)
+    }
+
+    return (dispatch) => {
+        fetch("http://localhost:3001/recipes", configObj)
+            .then(res => res.json())
+            .then(recipe => {
+                dispatch( { type: "SAVE_TO_MY_RECIPES", recipe: recipe } )
+            })
+    }
+      
+}
+

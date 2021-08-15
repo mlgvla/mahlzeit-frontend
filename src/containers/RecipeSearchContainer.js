@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RecipeSearchForm from '../components/recipe_search/RecipeSearchForm'
 import RecipeSearchHits from '../components/recipe_search/RecipeSearchHits';
 import { connect } from 'react-redux';
-import { fetchRecipes } from '../actions/recipeActions';
+import { fetchRecipes, saveToMyRecipes } from '../actions/recipeActions';
 
 class RecipeSearchContainer extends Component {
     
@@ -12,7 +12,7 @@ class RecipeSearchContainer extends Component {
             <div>
                 <RecipeSearchForm fetchRecipes={this.props.fetchRecipes} />
                 <br /><br /><br />
-                <RecipeSearchHits recipeHits={this.props.recipeHits}/>
+                <RecipeSearchHits recipeHits={this.props.recipeHits} saveToMyRecipes={this.props.saveToMyRecipes}/>
             </div>
         );
     }
@@ -27,7 +27,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchRecipes: (query) => dispatch(fetchRecipes(query))
+        fetchRecipes: (query) => dispatch(fetchRecipes(query)),
+        saveToMyRecipes: (recipe) => dispatch(saveToMyRecipes(recipe))
     }
 }
 
