@@ -27,6 +27,7 @@ const recipeReducer = (state = {
 
         case "LOADING_MY_RECIPES":
             // console.log("In LOADING_MY_RECIPES")
+            // this is creating a nested array - why?
             return {
                 ...state,
                 myRecipes: [...state.myRecipes],
@@ -35,14 +36,15 @@ const recipeReducer = (state = {
 
         case "LOAD_MY_RECIPES":
             // console.log("in load my recipes")
-            // console.log(action.myRecipes)
+            console.log(action.myRecipes)
             //map through myRecipes
-            let parsedRecipes = action.myRecipes.map(recipe => { 
+            const parsedRecipes = action.myRecipes.map(recipe => { 
                 return {...recipe, ingredientLines: JSON.parse(recipe.attributes.ingredientLines) }}
             )
+            console.log(parsedRecipes)
             return {
                 ...state,
-                myRecipes:[parsedRecipes]
+                myRecipes: parsedRecipes
             }
         
         case "SAVE_TO_MY_RECIPES":  
