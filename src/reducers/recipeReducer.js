@@ -44,6 +44,15 @@ const recipeReducer = (state = {
                 ...state,
                 myRecipes:[parsedRecipes]
             }
+        
+        case "SAVE_TO_MY_RECIPES":  
+            console.log(action.recipe)
+        
+            return {
+                ...state,
+                myRecipes: [...state.myRecipes, action.recipe]
+                }
+            
     
         default:
             return state

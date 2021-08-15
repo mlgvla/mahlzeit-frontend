@@ -17,7 +17,7 @@ const RecipeCard = (props) => {
             ingredientLines: JSON.stringify(recipeHit.ingredientLines),
             source: recipeHit.source
         }
-        //props.saveRecipe(mappedRecipe)
+        props.saveToMyRecipes(mappedRecipe)
     }
     return (
         <div>

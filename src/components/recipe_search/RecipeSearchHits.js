@@ -10,7 +10,7 @@ class RecipeSearchHits extends Component {
         console.log(this.props.recipeHits)
         return (
             <div>
-                {this.props.recipeHits.map(recipe => <RecipeCard key={recipe.recipeId} recipeHit={recipe}/>)}
+                {this.props.recipeHits.map(recipe => <RecipeCard key={recipe.recipeId} recipeHit={recipe} saveToMyRecipes = {this.props.saveToMyRecipes}/>)}
             </div>
         );
     }
