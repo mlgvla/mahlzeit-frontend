@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getMyRecipes } from '../actions/recipeActions'
+import { getMyRecipes, deleteRecipe } from '../actions/recipeActions'
+import MyRecipes from '../components/my_recipes/MyRecipes';
 
 class MyRecipesContainer extends Component {
 
@@ -12,7 +13,7 @@ class MyRecipesContainer extends Component {
     render() {
         return (
             <div>
-                <h1>Here are my recipes!</h1>
+                <MyRecipes deleteRecipe={this.props.deleteRecipe} myRecipes={this.props.myRecipes}/>
             </div>
         );
     }
@@ -27,6 +28,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getMyRecipes: () => dispatch(getMyRecipes()),
+        deleteRecipe: (id) => dispatch(deleteRecipe(id))
     }
 }
 

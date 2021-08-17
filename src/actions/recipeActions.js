@@ -20,13 +20,14 @@ export const getMyRecipes = () => {
         fetch("http://localhost:3001/recipes")
         .then(res => res.json())
         .then(myRecipes => {
-            dispatch( { type: "LOAD_MY_RECIPES", myRecipes: myRecipes.data } )
+            dispatch( { type: "LOAD_MY_RECIPES", myRecipes: myRecipes.data } )// remove .data?
         })
     }
     
 }
 
 export const saveToMyRecipes = (recipe) => {
+    console.log("in saveToMyRecipes")
     console.log(recipe)
     const configObj =  {
         method: "POST",
@@ -38,9 +39,14 @@ export const saveToMyRecipes = (recipe) => {
         fetch("http://localhost:3001/recipes", configObj)
             .then(res => res.json())
             .then(recipe => {
-                dispatch( { type: "SAVE_TO_MY_RECIPES", recipe: recipe } )
+                console.log(recipe)
+                dispatch( { type: "SAVE_TO_MY_RECIPES", recipe: recipe.data })
             })
     }
       
+}
+
+export const deleteRecipe = (id) => {
+    console.log(id)
 }
 
