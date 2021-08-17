@@ -38,9 +38,10 @@ const recipeReducer = (state = {
             // console.log("in load my recipes")
             console.log(action.myRecipes)
             //map through myRecipes
-            const parsedRecipes = action.myRecipes.map(recipe => { 
-                return {...recipe, ingredientLines: JSON.parse(recipe.attributes.ingredientLines) }}
-            )
+            const parsedRecipes = action.myRecipes.map(recipe => {
+                recipe.attributes.ingredientLines =  JSON.parse(recipe.attributes.ingredientLines)
+                return recipe
+             })
             console.log(parsedRecipes)
             return {
                 ...state,
@@ -49,13 +50,16 @@ const recipeReducer = (state = {
         
         case "SAVE_TO_MY_RECIPES":  
             console.log(action.recipe)
-        
             return {
                 ...state,
                 myRecipes: [...state.myRecipes, action.recipe]
                 }
             
-    
+        case "DELETE_RECIPE":
+            const myRecipes = state.myRecipes.filter(recipe => recipe.id !== action.id)
+            return {...state, myRecipes}
+
+
         default:
             return state
     }

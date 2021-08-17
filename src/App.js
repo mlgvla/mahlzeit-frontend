@@ -6,6 +6,7 @@ import RecipeSearchContainer from './containers/RecipeSearchContainer';
 import MyRecipesContainer from './containers/MyRecipesContainer';
 import MainHeader from './components/MainHeader';
 import RecipeDetail from './components/recipe_search/RecipeDetail';
+import MyRecipeDetail from './components/my_recipes/MyRecipeDetail';
 import { Component } from 'react';
 // import { getMyRecipes } from './actions/recipeActions'
 
@@ -24,6 +25,7 @@ class App extends Component {
                     {/* will need a unique id for each hit - do that in the reducer */}
                     <Route path='/search/:recipeId'><RecipeDetail /></Route>
                     <Route exact path='/myrecipes'><MyRecipesContainer /></Route>
+                    <Route path='/myrecipes/:id'><MyRecipeDetail/></Route>
                 </main>
                 
             </div>
