@@ -20,7 +20,7 @@ const RecipeCard = (props) => {
         props.saveToMyRecipes(mappedRecipe)
     }
     return (
-        //put info into a card here
+        //put info into a card here - include key
         <div>
             <Link to={`/search/${recipeId}`}>{props.recipeHit.recipe.label}</Link>
             <button onClick={handleClick} >Save</button>
