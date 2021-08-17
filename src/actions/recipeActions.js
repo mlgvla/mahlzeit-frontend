@@ -48,5 +48,17 @@ export const saveToMyRecipes = (recipe) => {
 
 export const deleteRecipe = (id) => {
     console.log(id)
+    const configObj = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    }
+    return (dispatch) => {
+        fetch(`http://localhost:3001/recipes/${id}`, configObj)
+        dispatch( { type: "DELETE_RECIPE", id: id } )
+    }
+    
 }
 

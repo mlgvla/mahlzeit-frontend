@@ -37,15 +37,11 @@ const recipeReducer = (state = {
         case "LOAD_MY_RECIPES":
             // console.log("in load my recipes")
             console.log(action.myRecipes)
-            console.log("Here are my recipes as they are before parsing")
             //map through myRecipes
-            const parsedRecipes = action.myRecipes.map(recipe => { 
-               
-               
-                return {...recipe, ingredientLines: JSON.parse(recipe.attributes.ingredientLines) }
-                
-            )
-            console.log("These are the parsedRecipes:")
+            const parsedRecipes = action.myRecipes.map(recipe => {
+                recipe.attributes.ingredientLines =  JSON.parse(recipe.attributes.ingredientLines)
+                return recipe
+             })
             console.log(parsedRecipes)
             return {
                 ...state,
@@ -54,13 +50,16 @@ const recipeReducer = (state = {
         
         case "SAVE_TO_MY_RECIPES":  
             console.log(action.recipe)
-            // action.recipe includes "data" at top level - need to remove that before putting in global store so the record matches the recipes loaded directly from database
             return {
                 ...state,
                 myRecipes: [...state.myRecipes, action.recipe]
                 }
             
-    
+        case "DELETE_RECIPE":
+            const myRecipes = state.myRecipes.filter(recipe => recipe.id !== action.id)
+            return {...state, myRecipes}
+
+
         default:
             return state
     }
