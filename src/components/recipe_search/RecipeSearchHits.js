@@ -9,9 +9,12 @@ class RecipeSearchHits extends Component {
     render() {
         console.log(this.props.recipeHits)
         return (
-            <div>
-                {this.props.recipeHits.map(recipe => <RecipeCard key={recipe.recipeId} recipeHit={recipe} saveToMyRecipes = {this.props.saveToMyRecipes}/>)}
+            <div className="container">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                    {this.props.recipeHits.map(recipe => <RecipeCard key={recipe.recipeId} recipeHit={recipe} saveToMyRecipes = {this.props.saveToMyRecipes}/>)}
+                </div>
             </div>
+            
         );
     }
 }
