@@ -11,6 +11,10 @@ const RecipeDetail = (props) => {
     // the logic in the parent components
 
     const params = useParams()
+    //can destructure params:  const {parent, id} = useParams()
+
+    //use an if statement here to find the appropriate recipe from recipeHits or myRecipes
+
     //find the recipe by recipeId?
     const recipe = props.recipeHits.find(recipeHit => params.recipeId === recipeHit.recipeId)
     // use an if in case recipe is not found

@@ -26,6 +26,7 @@ class App extends Component {
                     <Route path='/search/:recipeId'><RecipeDetail /></Route>
                     <Route exact path='/myrecipes'><MyRecipesContainer /></Route>
                     <Route path='/myrecipes/:id'><MyRecipeDetail/></Route>
+                    {/* <Route path='/myrecipes/:parent/:id'><MyRecipeDetail/></Route> */}
                 </main>
                 
             </div>
