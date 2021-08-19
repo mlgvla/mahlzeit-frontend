@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './RecipeDetail.css';
 
 const RecipeDetail = (props) => {
 
@@ -14,6 +15,8 @@ const RecipeDetail = (props) => {
     const recipe = props.recipeHits.find(recipeHit => params.recipeId === recipeHit.recipeId)
     // use an if in case recipe is not found
     const currentRecipe = recipe.recipe
+    
+    
  
     return (
         <section>

@@ -21,22 +21,31 @@ class RecipeSearchForm extends Component {
             searchString: ''
         })
     }
+    
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text"
-                        size="40" 
-                        name="searchString" 
-                        value={this.state.searchString} 
-                        placeholder="ingredients or recipe name"
-                        onChange={this.handleChange}
-                    />
-                    <input type="submit" value="Find Recipes" />
-                </form>
+            <div className="container">
+                <div className="row">
+                    <div className="col-4 offset-4">         
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="input-group mb-3">
+                                <input className="form-control"
+                                    type="text"        
+                                    name="searchString" 
+                                    value={this.state.searchString} 
+                                    placeholder="ingredients or recipe name"
+                                    onChange={this.handleChange}
+                                />
+                                <div className="input-group-append">
+                                    {/* select box will go here */}
+                                    <input  className="btn btn-outline-secondary"type="submit" value="Find Recipes" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }
 }
-
 export default RecipeSearchForm;

@@ -6,6 +6,8 @@ const RecipeCard = (props) => {
     
     const recipeId = props.recipeHit.recipeId
     const recipeHit = props.recipeHit.recipe
+    const imgNotAvailable = "https://imgur.com/7FOqG92"
+    //need img onerror handling for broken link
 
     const handleClick = () => {
     
@@ -24,7 +26,7 @@ const RecipeCard = (props) => {
             <div>
                 <div className="col">
                     <div className="card">
-                        <img src={recipeHit.image} className="card-img-top" alt='' />
+                        <img src={recipeHit.image || imgNotAvailable} className="card-img-top" alt='' />
                         <div className="card-body">
                         <h5 className="card-title text-center">{recipeHit.label}</h5>
                         <small className="text-muted">{recipeHit.source}</small><br /><br />
@@ -34,7 +36,7 @@ const RecipeCard = (props) => {
                             </div>
                             
                             <div className="d-flex justify-content-around align-items-center">
-                            <Link className="btn btn-sm btn-outline-success"  role="button"to={`/search/${recipeId}`}>View Recipe</Link>
+                            <Link className="btn btn-sm btn-outline-success"  role="button" to={`/search/${recipeId}`}>View Recipe</Link>
                                     <button type="button" className="btn btn-sm btn-outline-success" onClick={handleClick}>Save Recipe</button>
                                 <div className="btn-group">
                                     
