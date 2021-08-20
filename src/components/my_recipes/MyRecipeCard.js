@@ -28,7 +28,7 @@ const MyRecipeCard = (props) => {
                             </div>
                             
                             <div className="d-flex justify-content-around align-items-center">
-                            <Link className="btn btn-sm btn-outline-success"  role="button"to={`/search/${id}`}>View Recipe</Link>
+                            <Link className="btn btn-sm btn-outline-success"  role="button"to={`/myrecipes/${id}`}>View Recipe</Link>
                                     <button type="button" className="btn btn-sm btn-outline-success" onClick={handleDeleteRecipe}>Delete Recipe</button>
                                 <div className="btn-group">
                                     
