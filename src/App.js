@@ -17,7 +17,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="App" style={{backgroundColor: 'oldlace', height: "100vh"}}>
                 <MainHeader />
                 <main>
                     <Route exact path='/'><Home /></Route>
@@ -26,6 +26,7 @@ class App extends Component {
                     <Route path='/search/:recipeId'><RecipeDetail /></Route>
                     <Route exact path='/myrecipes'><MyRecipesContainer /></Route>
                     <Route path='/myrecipes/:id'><MyRecipeDetail/></Route>
+                    {/* <Route path='/myrecipes/:parent/:id'><MyRecipeDetail/></Route> */}
                 </main>
                 
             </div>

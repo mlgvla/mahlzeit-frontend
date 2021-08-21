@@ -1,0 +1,10 @@
+ul {
+    list-style-type: none;
+}
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+ }
