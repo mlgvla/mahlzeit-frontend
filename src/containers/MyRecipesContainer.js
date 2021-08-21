@@ -12,7 +12,7 @@ class MyRecipesContainer extends Component {
 
     render() {
         return (
-            <div style={{backgroundColor: 'oldlace', height: '100vh', minHeight: '10vh'}}>
+            <div>
                 <MyRecipes deleteRecipe={this.props.deleteRecipe} myRecipes={this.props.myRecipes}/>
             </div>
         );

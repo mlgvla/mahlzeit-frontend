@@ -17,7 +17,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="App" style={{backgroundColor: 'oldlace', height: "100vh"}}>
                 <MainHeader />
                 <main>
                     <Route exact path='/'><Home /></Route>

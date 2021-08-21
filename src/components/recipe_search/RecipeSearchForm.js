@@ -38,7 +38,7 @@ class RecipeSearchForm extends Component {
                                 />
                                 <div className="input-group-append">
                                     {/* select box will go here */}
-                                    <input  className="btn btn-outline-secondary"type="submit" value="Find Recipes" />
+                                    <input  className="btn btn-outline-success"type="submit" value="Find Recipes" />
                                 </div>
                             </div>
                         </form>

@@ -40,7 +40,7 @@ const MyRecipeDetail = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-4 offset-4">
+                    <div className="col-8 offset-2">
                         <div className="card-header">
                         <h3>Ingredients</h3>
                         </div>

@@ -23,13 +23,13 @@ const RecipeDetail = (props) => {
     
  
     return (
-        <div className="container">
+        <div className="container" >
             <div className="card mt-3 mb-3 offset-2" style={{ width: '75%' }}>
                 <div className="row g-0">
                     <div className="col-4">
                         <img src={currentRecipe.image} className="img-fluid rounded-start" alt="..." width="100%" />
                     </div>
-                    <div className="col-4 align-self-center text-center ">
+                    <div className="col-8 align-self-center text-center ">
                         <div className="card-body">
                             <h2 className="card-title">{currentRecipe.label}</h2>
                             <h5>
@@ -41,7 +41,7 @@ const RecipeDetail = (props) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-4 offset-4">
+                    <div className="col-8 offset-2">
                         <div className="card-header">
                         <h3>Ingredients</h3>
                         </div>
