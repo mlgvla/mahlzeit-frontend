@@ -9,7 +9,7 @@ class RecipeSearchContainer extends Component {
     render() {
         console.log(this.props)
         return (
-            <div>
+            <div style={{backgroundColor: 'oldlace', height: '100vh', minHeight: '10vh'}}>
                 <RecipeSearchForm fetchRecipes={this.props.fetchRecipes} />
                 <br /><br /><br />
                 <RecipeSearchHits recipeHits={this.props.recipeHits} saveToMyRecipes={this.props.saveToMyRecipes}/>

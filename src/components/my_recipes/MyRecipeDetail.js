@@ -28,7 +28,7 @@ const MyRecipeDetail = (props) => {
                     <div className="col-4">
                         <img src={currentRecipe.image} className="img-fluid rounded-start" alt="..." width="100%" />
                     </div>
-                    <div className="col-4 align-self-center">
+                    <div className="col-8 align-self-center text-center">
                         <div className="card-body">
                             <h2 className="card-title">{currentRecipe.label}</h2>
                             <h5>
