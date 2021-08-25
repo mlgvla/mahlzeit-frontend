@@ -17,7 +17,7 @@ const MyRecipeCard = (props) => {
     return (
         <div>
                             <div className="col">
-                    <div className="card">
+                    <div className="card myCard">
                         <img src={recipe.image} className="card-img-top" alt='' />
                         <div className="card-body">
                         <h5 className="card-title text-center">{recipe.label}</h5>
