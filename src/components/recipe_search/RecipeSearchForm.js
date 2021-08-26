@@ -8,7 +8,7 @@ const healthOptionsArray = [
     { label: "egg-free", value: "egg-free" },
     { label: "gluten-free", value: "gluten-free" },
     { label: "kosher", value: "kosher" },
-    { label: "low-sugan", value: "low-sugar" },
+    { label: "low-sugar", value: "low-sugar" },
     { label: "Mediterranean", value: "Mediterranean" },
     { label: "no-oil-added", value: "no-oil-added" },
     { label: "paleo", value: "paleo" },
@@ -38,7 +38,7 @@ class RecipeSearchForm extends Component {
         this.setState({
           healthOptions: options
         })
-        // console.log(this.state.healthOptions)
+        console.log(this.state.healthOptions)
     }
 
     handleSubmit = (e) => {
@@ -59,17 +59,50 @@ class RecipeSearchForm extends Component {
         console.log(healthOptions);
 
         this.props.fetchRecipes(query,healthOptions);
+
+        localStorage.setItem("query", this.state.searchString)
+        localStorage.setItem("healthOptions", JSON.stringify(this.state.healthOptions))
+        // this.setState({
+        //   searchString: "",
+        //   healthOptions: []
+        // })
+    }
+
+    handleReset = (e) => {
         this.setState({
-          searchString: "",
-          healthOptions: []
-        })
+            searchString: "",
+            healthOptions: []
+          })
+        
+        localStorage.removeItem("query")
+        localStorage.removeItem("healthOptions")
+    }
+
+    componentDidMount() {
+        let query = localStorage.getItem("query")
+        let obj = localStorage.getItem("healthOptions")
+        console.log(obj)
+        let healthOptions = JSON.parse(obj || "[]")
+
+        if (query !== "") {
+            this.setState({
+                searchString: query
+            })
+        }
+        if (healthOptions !== []) {
+            console.log("I'm here", healthOptions)
+            this.setState({
+                healthOptions: healthOptions
+            })
+        }
     }
     
     render() {
         return  (
             <div className="container">
-              <form onSubmit={this.handleSubmit}>
-                <div className="row mt-3">
+                            <form onSubmit={this.handleSubmit}>
+
+                <div className="row justify-content-around mt-3">
                   <div className="col-4">
                     <input
                       className="form-control"
@@ -99,8 +132,13 @@ class RecipeSearchForm extends Component {
                       value="Find Recipes"
                     />
                   </div>
+                  <div className="col-1">
+                  <button onClick={this.handleReset} type="button" className="btn btn-outline-secondary">Reset</button>
+
+                  </div>
                 </div>
-              </form>
+                </form>
+
             </div>
           )
     }
