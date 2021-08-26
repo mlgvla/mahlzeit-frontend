@@ -7,7 +7,13 @@ import RecipeCard from './RecipeCard';
 class RecipeSearchHits extends Component {
 
     render() {
-        console.log(this.props.recipeHits)
+        // if (this.props.recipeHits.length === 0) {
+        //     return (           
+        //         <div className="text-center"><h4>Sorry, no recipes found. <br></br>
+        //             Please try another search.</h4>
+        //         </div>
+        //     )
+        // }
         return (
             <div className="container">
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">

@@ -25,7 +25,7 @@ class RecipeSearchForm extends Component {
     render() {
         return (
             <div className="container">
-                <div className="row">
+                <div className="row mt-3">
                     <div className="col-4 offset-4">         
                         <form onSubmit={this.handleSubmit}>
                             <div className="input-group mb-3">
