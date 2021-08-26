@@ -27,7 +27,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchRecipes: (query) => dispatch(fetchRecipes(query)),
+        fetchRecipes: (query, healthOptions) => dispatch(fetchRecipes(query, healthOptions)),
         saveToMyRecipes: (recipe) => dispatch(saveToMyRecipes(recipe))
     }
 }
