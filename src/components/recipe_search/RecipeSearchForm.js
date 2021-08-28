@@ -47,9 +47,7 @@ class RecipeSearchForm extends Component {
         let healthOptions;
     
         if (this.state.healthOptions.length > 0) {
-          healthOptions = this.state.healthOptions
-            .map((option) => "&health=" + option.value)
-            .join("");
+          healthOptions = this.state.healthOptions.map((option) => "&health=" + option.value).join("");
         } else {
           healthOptions = ""
         }
