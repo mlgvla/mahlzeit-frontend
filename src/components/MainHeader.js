@@ -8,7 +8,10 @@ const MainHeader = () => {
            <header>
 <nav className="navbar navbar-expand-md navbar-dark bg-sage" aria-label="Fourth navbar example">
     <div className="container-fluid">
-      <a className="navbar-brand" href="/">Mahlzeit</a>
+
+        {/* CHANGE TO NAVLINK */}
+      {/* <a className="navbar-brand" href="/">Mahlzeit</a> */}
+      <NavLink className="navbar-brand" activeClassName="active" exact to="/">Mahlzeit</NavLink>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
