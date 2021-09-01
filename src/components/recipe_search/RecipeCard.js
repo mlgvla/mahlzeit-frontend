@@ -36,7 +36,7 @@ const RecipeCard = (props) => {
                             </div>
                             
                             <div className="d-flex justify-content-around align-items-center">
-                                {/* try sending the Link to={`/search/${name of parent component/${recipeId}}`} */}
+                                {/* I just found out I can pass props using Route!!} */}
                             <Link className="btn btn-sm btn-outline-secondary"  role="button" to={`/search/${recipeId}`}>View Recipe</Link>
                                     <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleClick}>Save Recipe</button>
                                 <div className="btn-group">

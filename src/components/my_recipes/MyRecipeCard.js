@@ -28,6 +28,7 @@ const MyRecipeCard = (props) => {
                             </div>
                             
                             <div className="d-flex justify-content-around align-items-center">
+                                {/* I just found out I can pass props through Route! */}
                             <Link className="btn btn-sm btn-outline-secondary"  role="button"to={`/myrecipes/${id}`}>View Recipe</Link>
                                     <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleDeleteRecipe}>Delete Recipe</button>
                                 <div className="btn-group">
