@@ -27,10 +27,11 @@ class RecipeSearchForm extends Component {
         healthOptions: []
     };
 
-    handleChange = (e) => {
+    handleChange = (e) =>{
         this.setState({
             searchString: e.target.value
         })
+    
     }
 
     handleSelectChange = (options) => {
