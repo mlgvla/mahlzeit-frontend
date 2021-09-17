@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './RecipeCard.css'
+//import RecipeDetail from './RecipeDetail';
 
 const RecipeCard = (props) => {
     
@@ -37,7 +38,10 @@ const RecipeCard = (props) => {
                             
                             <div className="d-flex justify-content-around align-items-center">
                                 {/* I just found out I can pass props using Route!!} */}
-                            <Link className="btn btn-sm btn-outline-secondary"  role="button" to={`/search/${recipeId}`}>View Recipe</Link>
+                            <Link className="btn btn-sm btn-outline-secondary"  
+                                role="button" 
+                                to={`/search/${recipeId}`}       
+                                >View Recipe</Link>
                                     <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleClick}>Save Recipe</button>
                                 <div className="btn-group">
                                     

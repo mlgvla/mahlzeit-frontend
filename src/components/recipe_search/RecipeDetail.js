@@ -52,6 +52,7 @@ const RecipeDetail = (props) => {
                                 </ul>
                                 Preparation instructions at <a href={currentRecipe.url} target="_blank" rel="noreferrer noopener">{currentRecipe.source}</a>
                             </div>
+                            {/* <button type="button" className="btn btn-sm btn-outline-secondary" onClick={handleClick}>Save Recipe</button> */}
                         </div>
                     </div>
                 </div>
